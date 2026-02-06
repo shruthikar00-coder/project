@@ -1,0 +1,81 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color:white;
+        }
+        nav{
+            align-items: center;
+            background-color:black;
+            text-align: center;
+            padding: 15px; 
+             justify-content: space-around;  
+            gap:10px;
+            word-spacing: 30px;
+        }
+         .ul{
+         /* display:flex;  */
+         flex-direction: row;
+         list-style-type: none;
+         
+        }
+    h1{
+        text-align: center;
+        font-style: italic;
+        color: brown;
+    }
+     
+    .Food >div:target{
+    display:block ;
+}
+    .Food > div{
+        display: none;
+        text-align: center;
+        
+    } 
+    
+    </style>
+</head>
+<body class="container">
+    <div>
+    <nav >
+        <ul class="ul">
+    <li>
+        <a href="#">Index</a>
+        <a href="#">Food</a>
+        <a href="#">About</a>
+    </li>
+    </ul>
+    </nav>
+    </div>
+     <h1>Food items</h1>
+    <div>
+    <a href="#cake" >cake</a><br>
+    <a href="#cooldrinks">cooldrinks</a><br>
+    <a href="#pizza">pizza</a><br>
+    <a href="#chicken Biryani">chicken Biryani</a><br>
+    <a href="#veg Biryani">veg Biryani</a>
+    </div>
+     <div class="Food">
+        <div id="cake">
+        <img src="https://sp.yimg.com/ib/th?id=OPAC.hb3oEKxi4zmn0A474C474&o=5&pid=21.1&w=160&h=105.jpeg" alt="cake" height="300px" width="475px">
+        </div>
+        <div id="cooldrinks">
+        <img src="https://img.freepik.com/premium-photo/good-looking-cooldrink-table_1105043-6074.jpg" alt="cooldrinks"  height="300px" width="475px">
+         </div>
+        <div id="pizza">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.7OQ-lgh5NR_IF5zhyzOjxwHaEK?pid=Api&P=0&h=180.jpg" alt="pizza">
+          </div>
+        <div id="chicken Biryani">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.K2oMu6V-1j3ZGIPcX2pbhQHaFj?pid=Api&P=0&h=180.jpg" alt="chicken Biryani">
+         </div>
+        <div id="veg Biryani">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.yh-lYonX_sPwlJA4vNQ6BAHaGL?pid=Api&P=0&h=180.jpg" alt="veg Biryani">
+        </div>
+    </div> 
+</body>
+</html> 

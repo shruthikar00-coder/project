@@ -1,0 +1,14 @@
+
+div:nth-child(1){
+    background-color: red;
+    color: blue;
+}
+
+
+#container:nth-child(1){
+    color: blue;
+}
+
+div>p{
+    color: brown;
+}

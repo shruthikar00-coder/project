@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="num">1</h1>
+    <button onclick="fn()">multiply</button>
+    <script>
+        var count=1;
+        function fn(){
+            count=count*2;
+            var h1=document.getElementById("num");
+            h1.innerText=count;
+            if(count % 2==0){
+                h1.style.color="red";
+            }else{
+                h1.style.color="blue";
+            }
+        }
+    </script>
+</body>
+</html>

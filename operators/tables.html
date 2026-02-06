@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="table">tables</h1>
+    <button onclick="fn()" >table</button>
+    <script>
+        var a=1;
+        let res="";
+        function fn(){
+            for(i=1;1<10;i++){
+                res += `${a}x ${i} =${a*i}<br>`;
+            }
+           document.getElementById('table').innerHTML=res;
+        }
+    </script>
+</body>
+</html>

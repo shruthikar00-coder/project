@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="num">0</h1>
+    <button onclick="fn()">increment</button>
+    <script>
+        var count=0;
+
+        function fn(){
+            count++;
+           var h1= document.getElementById("num");
+           h1.innerText=count;
+           if (count % 2==0) {
+             h1.style.color="red"
+           }else{
+            h1.style.color="green"
+           }
+        
+            
+        }
+
+</script>
+</body>
+</html>
+   
+           
