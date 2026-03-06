@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(196, 173, 230);
+            text-align: center;
+            margin-top: 90px;
+        }
+        h1{
+            border-bottom: 2px solid lightcyan;
+            padding-bottom: 10px;
+        }
+        h2{
+            padding: 10px;
+        }
+        button{
+            background-color: beige;
+            border: 2px;
+            border-radius: 7px;
+            padding: 10px;
+        }
+        input{
+            border: 2px;
+            border-radius: 5px;
+            padding:10px;
+        }
+        #message{
+             font-size: 80px;   /* BIG TIME */
+            color: red;
+            font-weight: bold;
+            margin: 30px 0;
+        }
+        #attempts{
+            font-size: 25px;
+            color:greenyellow;
+        }
+       
+    </style>
+</head>
+<body>
+    <h1> NUMBER GUESSING GAME</h1>
+<h2>Guess a number between 1 and 100:</h2>
+<input type="text" id="num" placeholder="">
+<button onclick="SubmitGuess()">Submit Guess</button>
+<div id="message"></div>
+<div id="attempts"></div><br>
+<button onclick="RestartGame()">RestartGame</button>
+<script>
+    let randomNumber=Math.floor(Math.random()*100)+1;
+    count=0;
+    function SubmitGuess(){
+        let userguess=parseInt(document.getElementById("num").value);
+        if(!userguess){
+            document.getElementById("message").innerHTML="enter a value";
+            return;
+        }
+        count++;
+    if(userguess>randomNumber){
+        document.getElementById("message").innerHTML="Too High! Try a  lower number.";
+    }else if(userguess<randomNumber){
+        document.getElementById("message").innerHTML="Too Low! Try a high number.";
+    }else{
+        document.getElementById("message").innerHTML="correct";
+    }
+document.getElementById("attempts").innerHTML="attempts:"+ count;
+}
+     function RestartGame(){
+        randomNumber=Math.floor(Math.random()*100)+1;
+    count=0;
+    document.getElementById("message").innerHTML="";
+    document.getElementById("attempts").innerHTML="";
+     document.getElementById("num").value = "";
+     }
+
+    
+</script>
+</body>
+</html>

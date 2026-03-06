@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(58, 58, 198);
+            text-align: center;
+            margin-top: 100px;
+        }
+        h1{
+            color:white;
+            border-bottom: 2px solid wheat;
+            padding-bottom: 9px;
+        }
+        button{
+            border: 10px;
+            border-radius: 10px;
+            padding:13px;
+            font-size: 20px;
+        }
+        #timer{
+            font-size: 80px;   /* BIG TIME */
+            color: white;
+            font-weight: bold;
+            margin: 30px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>COUNTDOWN TIMER</h1>
+<div id="timer"></div>
+<button onclick="StartTimer()" style="background-color: green;">Start</button>
+<button onclick="StopTimer()" style="background-color: orange;">Stop</button>
+<button onclick="ResetTimer()" style="background-color: red;">Reset</button><br><br>
+<button onclick="restartGame()" style="background-color: blue;">Restart</button>
+<script>
+    let time=5600;
+    let interval;
+     function updatedisplay(){
+        let hours=Math.floor(time/3600);
+        let minutes=Math.floor((time%3600)/60);
+        let seconds=(time%60);
+        document.getElementById("timer").innerHTML=
+        `${String(hours).padStart(2,'0')}:
+        ${String(minutes).padStart(2,'0')} :
+        ${String(seconds).padStart(2,'0')}`
+     }
+
+    function StartTimer(){
+    interval=setInterval( function(){
+    if(time>0){
+      time--;
+      updatedisplay();
+       }
+
+        },300);
+    }
+    function StopTimer(){
+         clearInterval(interval);
+    }
+    function ResetTimer(){
+        clearInterval(interval);
+        time=5600;
+      updatedisplay();
+    }
+    function restartGame(){
+    document.getElementById("timer").innerHTML="";
+    }
+</script>
+</body>
+</html>

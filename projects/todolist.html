@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: darkcyan;
+             display: flex; 
+            align-items: center;
+            justify-content: center;
+            margin: 100px;
+        }
+        h2{
+    border-bottom: 3px solid brown;
+    padding-bottom: 5px; 
+}
+        .box{
+            background-color: cornflowerblue;
+            height:200px;
+            width:400px;
+            border:2px solid brown;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        button{
+            background-color: blueviolet;
+        }
+       input{
+        border-radius: 5px;
+       }
+    </style>
+</head>
+<body>
+    <div class="box">
+    <h2>TODO LIST</h2>
+<input type="text" id="todo" placeholder="Enter the task">
+<button onclick="taskAdd()">Add</button>
+<ul id="task"></ul>
+    </div>
+<script>
+    function taskAdd(){
+        let items=document.getElementById("todo").value;
+        let li=document.createElement("li");
+        li.textContent=items;
+        document.getElementById("task").appendChild(li);
+        document.getElementById("todo").value="";
+    }
+    
+</script>
+</body>
+</html>

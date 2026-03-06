@@ -9,14 +9,15 @@
             background-color: white;
             font-family: Arial, Helvetica, sans-serif;
         }
-        nav{
+        .nav {
             text-align: center;
-            justify-content: flex-end;
             display: flex;
             padding: 20px;
-            gap:15px;
+            gap:20px;
+             justify-content: space-between;
+            /* list-style-type: none; */
         }
-        nav a{
+        .nav  a{
             text-decoration: none;
             color: black;
             font-size: 15px;
@@ -79,19 +80,19 @@
 </head>
 <body>
     <div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#">About</a>
-                    <a href="#">Store</a>
-                    <a href="#">Gmail</a>
-                    <a href="#">Image</a>
-                </li>
-            </ul>
-        </nav>
+        <div class="nav">
+          <div>
+                 <a href="#">About</a>
+                  <a href="#">Store</a>
+                  </div>
+                  <div>
+                 <a href="#">Gmail</a>
+                  <a href="#">Image</a>
+                  </div>
+           </div>       
         <div class="main">
         <img src="https://static.vecteezy.com/system/resources/previews/010/930/001/original/google-logo-icon-illustration-free-vector.jpg" width="275">
-        <input type="text"><br>
+        <input type="text"><br><br>
         <div class="button">
         <button>search</button>
         <button>i'm feeling lucky</button><br>

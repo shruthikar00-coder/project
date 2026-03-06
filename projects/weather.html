@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather App</title>
+
+<style>
+    body{
+        margin:0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(to right, #74ebd5, #9face6);
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    #container{
+        background:white;
+        padding:25px;
+        border-radius:15px;
+        width:300px;
+        text-align:center;
+        box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    h2{
+        margin-bottom:15px;
+    }
+
+    input{
+        width:80%;
+        padding:8px;
+        border-radius:8px;
+        border:1px solid #ccc;
+        outline:none;
+        margin-bottom:10px;
+    }
+
+    button{
+        padding:8px 15px;
+        border:none;
+        border-radius:8px;
+        background:#4facfe;
+        color:white;
+        font-weight:bold;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    button:hover{
+        background:#00c6ff;
+    }
+
+    #block{
+        margin-top:15px;
+        background:#f1f5f9;
+        padding:10px;
+        border-radius:10px;
+    }
+
+    #block p{
+        margin:5px 0;
+        font-size:16px;
+    }
+</style>
+</head>
+
+<body>
+<div id="container">
+    <h2>Weather App</h2>
+    <input id="city" type="text" placeholder="Enter city name">
+    <br>
+    <button onclick="print()">Print</button>
+    <div id="block"></div>
+</div>
+
+<script>
+function print(){
+    var city = document.getElementById("city").value;
+    var output ="";
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2b9b73029dec52de447364ca95e1f215`)
+    .then(res => res.json())
+    .then(data =>{
+        console.log(data)
+
+        for(var i=0; i < data.weather.length; i++){
+            output += `
+                <p><b>Weather:</b> ${data.weather[i].main}</p>
+                <p><b>Temperature:</b> ${Math.floor(data.main.temp - 273.15)}°C</p>
+            `;
+        }
+
+        document.getElementById("block").innerHTML = output;
+    })
+    .catch((err)=>console.log("Error :",err))
+}
+</script>
+</body>
+</html>
