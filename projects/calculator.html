@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: bisque;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>CALCULATOR:</h1>
+<div>
+    <input type="text" placeholder="first number" id="num1"><br><br>
+     <input type="text" placeholder="second number" id="num2"><br><br>
+
+     <button onclick="Add()">Add</button>
+     <button onclick="Substract()">Substract</button>
+     <button onclick="Multiply()">Multiply</button>
+     <button onclick="Division()">Division</button>
+     <h2 id="result">Result:</h2>
+</div>
+<script>
+
+    function Add(){
+        let num1=Number(document.getElementById("num1").value);
+         let num2=Number(document.getElementById("num2").value);
+         let output=num1+num2
+         document.getElementById("result").innerHTML=output;
+    }
+
+    function Substract(){
+        let num1=Number(document.getElementById("num1").value);
+         let num2=Number(document.getElementById("num2").value);
+         let output=num1-num2
+         document.getElementById("result").innerHTML=output;
+    }
+
+    function Multiply(){
+        let num1=Number(document.getElementById("num1").value);
+         let num2=Number(document.getElementById("num2").value);
+         let output=num1*num2
+         document.getElementById("result").innerHTML=output;
+    }
+    function Division(){
+        let num1=Number(document.getElementById("num1").value);
+         let num2=Number(document.getElementById("num2").value);
+         let output=num1/num2
+         document.getElementById("result").innerHTML=output;
+    
+    if(num2===0){
+        document.getElementById("result").innerText = "you cannot divide 0";
+    }else{
+        document.getElementById("result").innerHTML=num1/num2;
+    }
+    }
+</script>
+</body>
+</html>
