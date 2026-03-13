@@ -4,59 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
+     <style>
         body{
-            background-color: bisque;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
         }
-    </style>
+      .calculator{
+        height: 250px;
+        width: 228px;
+        border:2px solid black;
+        border-radius: 10px;
+        color: white;
+        background-color:lavender;
+        padding: 10px;
+    
+      }
+      button{
+        height: 30px;
+        width:50px;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 15px;
+
+      }
+      input{
+        width: 220px;
+        height: 30px;
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+    </style> 
 </head>
 <body>
-<h1>CALCULATOR:</h1>
-<div>
-    <input type="text" placeholder="first number" id="num1"><br><br>
-     <input type="text" placeholder="second number" id="num2"><br><br>
-
-     <button onclick="Add()">Add</button>
-     <button onclick="Substract()">Substract</button>
-     <button onclick="Multiply()">Multiply</button>
-     <button onclick="Division()">Division</button>
-     <h2 id="result">Result:</h2>
-</div>
+    <div class="calculator">
+    <input type="text" id="result"><br><br>
+    <div class="row"></div>
+     <button onclick="deleteOne('x')">x</button>
+     <button onclick="clearDisplay('c')" style="background-color: orange;">c</button>
+     <button onclick="operator('%')">%</button>
+     <button onclick="operator('/')">/</button><br>
+     <div class="row"></div>
+      <button onclick="Number('7')">7</button>
+       <button onclick="Number('8')">8</button>
+        <button onclick="Number('9')">9</button>
+         <button onclick="operator('*')">*</button><br>
+         <div class="row"></div>
+          <button onclick="Number('4')">4</button>
+          <button onclick="Number('5')">5</button>
+          <button onclick="Number('6')">6</button> 
+           <button onclick="operator('-')">-</button><br>
+           <div class="row"></div>
+            <button onclick="Number('1')">1</button>
+             <button onclick="Number('2')">2</button>
+              <button onclick="Number('3')">3</button>
+               <button onclick="operator('+')">+</button><br>
+               <div class="row"></div>
+                <button onclick="plus_minus('+/-')">+/-</button>
+                 <button onclick="Number('0')">0</button>
+                  <button onclick="Number('.')">.</button>
+                   <button onclick="equal('=')" style="background-color: orange;">=</button>
+                   </div>
 <script>
-
-    function Add(){
-        let num1=Number(document.getElementById("num1").value);
-         let num2=Number(document.getElementById("num2").value);
-         let output=num1+num2
-         document.getElementById("result").innerHTML=output;
+    function deleteOne(){
+        let value=document.getElementById("result").value;
+        document.getElementById("result").value=value.slice(0,-1);
     }
-
-    function Substract(){
-        let num1=Number(document.getElementById("num1").value);
-         let num2=Number(document.getElementById("num2").value);
-         let output=num1-num2
-         document.getElementById("result").innerHTML=output;
+    function clearDisplay(){
+   document.getElementById("result").value="";
     }
-
-    function Multiply(){
-        let num1=Number(document.getElementById("num1").value);
-         let num2=Number(document.getElementById("num2").value);
-         let output=num1*num2
-         document.getElementById("result").innerHTML=output;
+     function Number(num){
+     let value=document.getElementById("result");
+     value.value +=num;
+     }
+     function operator(op){
+        let value=document.getElementById("result");
+                value.value += op;
+           }
+        
+    function equal(){
+    let value = document.getElementById("result").value;
+    if(value){
+        try{
+            document.getElementById("result").value = eval(value);
+        } catch {
+            document.getElementById("result").value = "Error";
+        }
     }
-    function Division(){
-        let num1=Number(document.getElementById("num1").value);
-         let num2=Number(document.getElementById("num2").value);
-         let output=num1/num2
-         document.getElementById("result").innerHTML=output;
+}
     
-    if(num2===0){
-        document.getElementById("result").innerText = "you cannot divide 0";
-    }else{
-        document.getElementById("result").innerHTML=num1/num2;
-    }
-    }
-</script>
+</script>        
+
 </body>
 </html>
